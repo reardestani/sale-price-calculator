@@ -55,9 +55,7 @@ $( document ).ready(function() {
 	function calculateProfit( data, tableTotal ) {
 		let BuyTotalTradeVolume = data[2];
 		let profit;
-		console.log( BuyTotalTradeVolume );
-		// tableTotal = tableTotal - ( tableTotal / 99.8 )
-		console.log( Math.round( tableTotal ) );
+
 		profit = tableTotal - BuyTotalTradeVolume 
 
 		return Math.round( profit );
