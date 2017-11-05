@@ -1,0 +1,7 @@
+@import "turretcss/dist/turretcss.min.css";
+
+.container {
+	min-width: 300px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}

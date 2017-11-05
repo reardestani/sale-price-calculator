@@ -1,0 +1,88 @@
+@import 'tippy.js/dist/tippy.css';
+
+.container-4 > div > div.ra-flex:nth-child(7) {
+	display: flex;
+	align-items: center;
+	direction: initial;
+	position: relative;
+	font-size: 10px !important;
+	justify-content: center;
+}
+
+.container-4 > div > div.ra-flex:nth-child(7) *:not( .ra-sale-price-percent ) {
+	margin-left: 0 !important;
+}
+
+.ra-sale-price {
+	color: #42c5a5;
+}
+
+.ra-sale-price-percent {
+	margin-left: -4px !important;
+	margin-right: 0;
+	font-size: 7px;
+	color: #c1c3c3;
+	top: -8px;
+	position: relative;
+}
+
+.tippy-tooltip {
+	background-color: #172228;
+	box-shadow: #000 0px 0px 14px;
+	padding: 0;
+}
+
+.spc-wrap {
+	
+}
+
+.spc-table {
+	td {
+		border: 1px solid #28323a;
+	}
+
+	th {
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+		color: #657788;
+		font-family: agoogle;
+		font-size: 11px;
+		font-weight: 100;
+	}
+
+	td {
+		padding: .4rem 1.5rem;
+		font-size: 11px;
+		font-family: tahoma;
+		color: #d0d1d1;
+		
+		&:first-child {
+			border-right-width: 0;
+		}
+		
+		&:last-child {
+			border-left-width: 0;
+		}
+		
+		&.spc-price {
+			cursor: pointer;
+		}
+	}
+	
+	tr {
+		&:not( :first-child ):hover {
+			background-color: #0E171D;
+		}
+
+		&:last-child {
+			td {
+				border-bottom-width: 0;
+			}
+		}
+	}
+}
+
+.spc-table {
+	border-collapse: collapse;
+	width: 100%;
+}

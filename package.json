@@ -1,0 +1,21 @@
+{
+  "name": "sale-price-calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^7.1.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-js-import": "^1.0.6",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-webpack": "^1.5.0",
+    "jquery": "^3.2.1",
+    "postcss-import": "^11.0.0",
+    "postcss-nested": "^2.1.2",
+    "tippy.js": "^1.4.1",
+    "tooltip.js": "^1.1.6",
+    "turretcss": "^4.0.4"
+  }
+}
