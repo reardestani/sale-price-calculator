@@ -1,7 +1,6 @@
 @import '../../node_modules/jquery/dist/jquery.slim.min.js';
 @import '../../node_modules/tippy.js/dist/tippy.min.js';
 
-
 $( 'body' ).append( `<div id="template" style="display: none;">محاسبه ...</div>` );
 
 $( document ).ready(function() {
