@@ -70,9 +70,10 @@ $( document ).ready(function() {
 		return Math.round( total );
 	}
 
-	setTimeout( function() {
+	$( document ).on( 'click', '.container-4 .x-grid-row', function() {
+		var btnSellId = $( '.menu-sell', this ).attr('id')
 
-		const tip = tippy('.container-4 .x-grid-row', {
+		const tip = tippy(this, {
 			trigger: 'click',
 			interactive: true,
 			interactiveBorder: 15,
@@ -83,27 +84,31 @@ $( document ).ready(function() {
 			onShow() {
 				const content = this.querySelector('.tippy-tooltip-content')
 				const element = tip.getReferenceElement( this )
-				let percentStart = 0
-				let percentEnd = 3
+				let percentStart = -6
+				let percentEnd = 6
 				let percentStep = 0.25
 				let data = getdata( element )
 				let tablePrice
 				let tableProfit
 				let tableTotal
 
-				let table = `<table class="spc-table"><tr>
-					<th>درصد</td>
-					<th>قیمت</td>
-					<th>سود</td>
-					<th>جمع کل</td>
-				</tr>`
+				let table = `<table class="spc-table" data-btn-buy="${ tablePrice }" data-btn-sell="${ btnSellId }">
+					<thead>
+						<tr>
+							<th>درصد</td>
+							<th>قیمت</td>
+							<th>سود</td>
+							<th>جمع کل</td>
+						</tr>
+					</thead>
+				<tbody>`
 
 				for (percent = percentStart; percent <= percentEnd; percent += percentStep) {
 					tablePrice = calculatePrice( data, percent )
 					tableTotal = calculateTotal( data, tablePrice )
 					tableProfit = calculateProfit( data, tableTotal )
 					
-					table += `<tr>
+					table += `<tr class="${ percent < 0 ? 'spc-red' : 'spc-green' }">
 						<td class="spc-percent">${ percent }%</td>
 						<td class="spc-price" title="Sell with this price">${ tablePrice.toLocaleString() }</td>
 						<td class="spc-profit">${ tableProfit.toLocaleString() }</td>
@@ -111,17 +116,24 @@ $( document ).ready(function() {
 					</tr>`
 				}
 
-				table += `</table>`;
+				table += `</tbody></table>`;
 
 				content.innerHTML = table
 				tip.loading = false
 			}
 		});
 
-	}, 4000 );
+	} );
 
 	$( document ).on( 'click', '.spc-price', function() {
-		copyToClipboard( this );
+		var btnSell;
+		
+		if ( $(this).parent().hasClass('spc-green') ) {
+			btnSell = $(this).parents('table').data('btn-sell')
+		}
+
+		copyToClipboard(this)
+		$('#' + btnSell).trigger('click')
 	} );
 
 });

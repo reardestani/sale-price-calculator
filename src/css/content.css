@@ -30,6 +30,8 @@
 	background-color: #172228;
 	box-shadow: #000 0px 0px 14px;
 	padding: 0;
+	overflow-y: auto;
+	max-height: 400px;
 }
 
 .spc-wrap {
@@ -72,6 +74,14 @@
 	tr {
 		&:not( :first-child ):hover {
 			background-color: #0E171D;
+		}
+
+		&.spc-red {
+			background-color: #f0616e87;
+		}
+
+		&.spc-green {
+			background-color: #40bfa178;
 		}
 
 		&:last-child {
